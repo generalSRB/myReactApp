@@ -7,11 +7,11 @@ body {
 }
 
 .main-content {
-  height: 1200px;
+  height: 1000px;
 }
 
 .wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }

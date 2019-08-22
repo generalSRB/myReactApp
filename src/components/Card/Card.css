@@ -2,9 +2,24 @@
 .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
-    width: 24%;
+    width: 20%;
     height: 250px;
-    margin-right: 1%;
-    background-color: aqua;
+    margin: 1%;
+    background-color: rgb(202, 247, 247);
 }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

@@ -1,0 +1,22 @@
+
+button {
+    background: none;
+    border: solid 2px black;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 3px auto;
+}
+
+button.red {
+    border: red 2px solid;
+    background-color: red;
+    font-weight: bold;
+}
+
+button.orange {
+    border: orange 2px solid;
+    background-color: orange;
+    font-weight: bold;
+}
+
