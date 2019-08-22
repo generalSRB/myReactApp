@@ -8,39 +8,69 @@ import {Cards} from './components/Cards/Cards';
 
 class App extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      showCards: true
+    state = {
+      showCards: true,
+      data:[]
     }
-  }
-  
 
+    componentDidMount() {
+      this.setState ({
+        data: data
+      })
+    }
+
+    // Updating methods
+    // getDerivedStateFromProps(props, state) {
+
+    // }
+
+    // getSnapshotBeforeUpdate(prevProps, prevState) {
+    //   console.log(prevState, this.state)
+    // }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //   console.log(prevState, this.state)
+    // }
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //   return this.state.name !== nextState.name
+    // }
+  
   onCardRemove = (e) => {
     console.log(e.target)
   }
-    
-  switchContent = () => {
-    this.setState({
-      showCards: !this.state.showCards
 
-    })
+  // update = () => {
+  //   this.setState({
+  //     showCards: !this.props.state.showCards
+  //   })
+  // }
+    
+  renderCards = () => {
+
+    const displayData = this.state.searchedData || this.state.data;
+
+    return this.state.showCards&&this.state.data.length ? <Cards data={displayData} removeCard={this.onCardRemove} /> : null;
   }
 
-  renderCards = () => {
-    return this.state.showCards ? <Cards data={data} removeCard={this.onCardRemove} /> : null;
+  onCardSearch = (data) => {
+    this.setState({
+      searchedData: data
+    })
   }
 
   render () {
     return (
       <Fragment>
-        <Header widthClass="full-width" />
-        <div className="main-content" onClick={this.switchContent}>
+        <Header 
+          className="full-width" 
+          data={this.state.data}
+          onSearch={(data) => this.onCardSearch(data)}
+          />
+        <div className="main-content" onClick={this.update}>
           {this.renderCards()}
         </div>
       </Fragment>
-    
     );
   }
 }
