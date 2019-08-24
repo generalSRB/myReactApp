@@ -10,7 +10,6 @@ const Header = (props) => (
             <img className='logo' src={logo} alt='' />
             <Search data={props.data} onSearch={(data) => props.onSearch(data)} />
         </div>
-        
     </header>
 )
 
